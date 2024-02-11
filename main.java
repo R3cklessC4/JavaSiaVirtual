@@ -15,5 +15,6 @@ public class main {
         rippleAdder_test.runTests();
         multiplier_test.runTests();
         ALU_test.runTests();
+        memory_test.runTests();
     }
 }
