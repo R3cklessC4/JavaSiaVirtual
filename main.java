@@ -16,5 +16,6 @@ public class main {
         multiplier_test.runTests();
         ALU_test.runTests();
         memory_test.runTests();
+        computer_test.runTest();
     }
 }
