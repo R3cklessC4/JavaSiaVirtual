@@ -4,6 +4,7 @@
  * @author Joshua Angulo
  * 
  *         Due: September 4, 2022
+ *         Last edited: 9/18/22 12:23am
  */
 
 public class longword implements Ilongword {
@@ -24,6 +25,15 @@ public class longword implements Ilongword {
             this.bits[i] = new Bit(false);
         }
         this.set(value);
+    }
+
+    public longword(longword longwordCopy) {
+        this.bits = new Bit[32];
+        // To make sure there is no null bit
+        for (int i = 0; i < 32; i++) {
+            this.bits[i] = new Bit(false);
+        }
+        this.copy(longwordCopy);
     }
 
     public Bit getBit(int i) {
@@ -76,7 +86,7 @@ public class longword implements Ilongword {
         for (int i = 0; i < amount; i++) {
             newLongword.setBit(i, new Bit());
         }
-        for (int i = amount; i < 31; i++) {
+        for (int i = amount; i < 32; i++) {
             newLongword.setBit(i, this.getBit(j));
             j++;
         }
