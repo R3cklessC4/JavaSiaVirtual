@@ -23,3 +23,8 @@ Assignments for my ICSI404 - Computer Assembly class
 - ALU (Arithmetic Logic Unit) controls operations based on Operation code provided
 
 ### Main.java was created to keep tests more organized
+
+## Memory and Computer Components
+- Memory: Represents the memory component of the virtual machine
+- Utilizes longwords for reading and writing to 1024 bytes of memory
+- Computer: Constructs the framework of the computer
