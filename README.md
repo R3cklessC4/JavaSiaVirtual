@@ -16,4 +16,10 @@ Assignments for my ICSI404 - Computer Assembly class
 - Implements addition and subtraction operations for longwords
 - Takes two longwords as input and returns the sum or difference as per user request
 
-# WITH EACH ASSIGNMENT PUSHED, IMPROVEMENTS WERE MADE TO THE OLDER FILES
+### WITH EACH ASSIGNMENT PUSHED, IMPROVEMENTS WERE MADE TO THE OLDER FILES
+
+## Multiplier and ALU
+- Multiplier enables multiplication of longwords using ripple adder
+- ALU (Arithmetic Logic Unit) controls operations based on Operation code provided
+
+### Main.java was created to keep tests more organized

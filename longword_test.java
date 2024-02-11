@@ -7,52 +7,13 @@
  */
 
 public class longword_test {
-    public static void main(String[] args) throws Exception {
-        runTests();
-    }
 
     public static void runTests() throws Exception {
-        // THIS FIRST PARTS TEST bit_runTests();!!!
-        System.out.println("--------------------------------------------------");
-        System.out.println("--------------------------------------------------");
-        System.out.println("THIS IS TESTING PROJECT 1 bit.runTests()");
-        System.out.println("TO SEE PROJECT 2, PLEASE SCROLL DOWN UNTIL YOU SEE A SIMILAR COMMENT LIKE THIS");
-        System.out.println("--------------------------------------------------");
-        System.out.println("--------------------------------------------------" + "\n");
-
-        Bit bit = new Bit(true);
-        Bit bit2 = new Bit(false);
-        Bit bit3 = new Bit(true);
-        Bit bit4 = new Bit(false);
-
-        // Run initial
-        System.out.println("Initial Bits:");
-        System.out.println("Bit 1 is: " + bit.getValue());
-        System.out.println("Bit 2 is: " + bit2.getValue());
-        System.out.println("Bit 3 is: " + bit3.getValue());
-        System.out.println("Bit 4 is: " + bit4.getValue() + "\n");
-
-        // Tests everything excepts operators to keep it cleaner
-        bitTestOthers(bit, bit2, bit3, bit4);
-
-        System.out.println("-------------------------");
-        System.out.println("All bits are restored to original");
-        System.out.println("-------------------------" + "\n");
-
-        bitTestAnd(bit, bit2, bit3, bit4);
-        bitTestOr(bit, bit2, bit3, bit4);
-        bitTestXor(bit, bit2, bit3, bit4);
-        bitTestNot(bit, bit2, bit3, bit4);
-
         System.out.println("--------------------------------------------------");
         System.out.println("--------------------------------------------------");
         System.out.println("NOW TESTING longword_test.runTests()");
         System.out.println("--------------------------------------------------");
         System.out.println("--------------------------------------------------" + "\n");
-
-        /**
-         * NOW TESTING LONGWORD.JAVA!!!!!
-         */
 
         // First Longword and Second Longword test setBit() for testing purposes
         System.out.println("Testing setBit() and printing first two longwords:\n");
@@ -95,6 +56,12 @@ public class longword_test {
         testGetSigned();
         testGetUnsigned();
         testCopyAndSet();
+
+        System.out.println("--------------------------------------------------");
+        System.out.println("--------------------------------------------------");
+        System.out.println("TEST END FOR ASSIGNMENT 2: longword_test.java");
+        System.out.println("--------------------------------------------------");
+        System.out.println("--------------------------------------------------" + "\n");
     }
 
     public static void testAnd() {
@@ -126,7 +93,6 @@ public class longword_test {
         System.out.println("Longword AND longword 2:\n" + longword.and(longword2));
         System.out.println("Longword AND longword 3:\n" + longword.and(longword3));
         System.out.println("Longword 2 AND longword 3:\n" + longword2.and(longword3) + "\n");
-
     }
 
     public static void testOr() {
@@ -327,176 +293,5 @@ public class longword_test {
         longword2.set(-571);
         System.out.println("After setting -571\n" + longword2);
 
-    }
-
-    /**
-     * TESTS FOR bit_tests.runTests();
-     * PASSED THIS POINT IS FROM PROJECT 1
-     * EVERY THING FROM PROJECT 2 IS ABOVE THIS COMMENT BLOCK
-     */
-
-    public static void bitTestOthers(Bit bit, Bit bit2, Bit bit3, Bit bit4) {
-        bit.set(false);
-        System.out.println("Tests set(value) \nChanged bit to false: " + bit + "");
-        bit.set(true);
-        System.out.println("Changed back to true: " + bit + "\n");
-
-        System.out.println("Testing toggle(). it should reverse the inital settings.");
-        bit.toggle();
-        bit2.toggle();
-        System.out.println("Toggled bit 1: " + bit);
-        System.out.println("Toggled bit 2: " + bit2);
-        bit.toggle();
-        bit2.toggle();
-        System.out.println("Toggled bit 1 back: " + bit);
-        System.out.println("Toggled bit 2 back: " + bit2 + "\n");
-
-        System.out.println("Testing set() and clear(). Sets should be true, clears should be false.");
-        bit2.set();
-        bit4.set();
-        System.out.println("Set bit 2: " + bit2);
-        System.out.println("Set bit 4: " + bit4);
-        bit2.clear();
-        bit4.clear();
-        System.out.println("Clear bit 2: " + bit2 + "");
-        System.out.println("Clear bit 4: " + bit4 + "\n");
-
-        System.out.println("Testing getValue()");
-        System.out.println("Bit 1 should be true\nBit: " + bit.getValue());
-        System.out.println("Bit 2 should be false\nBit2: " + bit2.getValue());
-        System.out.println("Bit 3 should be true\nBit3: " + bit3.getValue());
-        System.out.println("Bit 4 should be false\nBit4: " + bit4.getValue() + "\n");
-    }
-
-    public static void bitTestAnd(Bit bit, Bit bit2, Bit bit3, Bit bit4) throws Exception {
-        // Run and
-        System.out.println("Test operator AND:");
-
-        System.out.print("True and false: ");
-        if ((bit.and(bit2)).getValue() != false) {
-            throw new Exception("Fail");
-        } else {
-            System.out.println(bit.and(bit2) + "\nPass");
-        }
-
-        System.out.print("True and True: ");
-        if ((bit.and(bit3)).getValue() != true) {
-            throw new Exception("Fail");
-        } else {
-            System.out.println(bit.and(bit3) + "\nPass");
-        }
-
-        System.out.print("False and True: ");
-        if ((bit4.and(bit)).getValue() != false) {
-            throw new Exception("Fail");
-        } else {
-            System.out.println(bit4.and(bit) + "\nPass");
-        }
-
-        System.out.print("False and False: ");
-        if ((bit2.and(bit4)).getValue() != false) {
-            throw new Exception("Fail");
-        } else {
-            System.out.println(bit2.and(bit4) + "\nPass" + "\n");
-        }
-    }
-
-    public static void bitTestOr(Bit bit, Bit bit2, Bit bit3, Bit bit4) throws Exception {
-        // Run or
-        System.out.println("Test operator Or:");
-
-        System.out.print("True or false: ");
-        if ((bit.or(bit2)).getValue() != true) {
-            throw new Exception("Fail");
-        } else {
-            System.out.println(bit.or(bit2) + "\nPass");
-        }
-
-        System.out.print("True or True: ");
-        if ((bit.or(bit3)).getValue() != true) {
-            throw new Exception("Fail");
-        } else {
-            System.out.println(bit.or(bit3) + "\nPass");
-        }
-
-        System.out.print("False or True: ");
-        if ((bit4.or(bit)).getValue() != true) {
-            throw new Exception("Fail");
-        } else {
-            System.out.println(bit4.or(bit) + "\nPass");
-        }
-
-        System.out.print("False or False: ");
-        if ((bit2.or(bit4)).getValue() != false) {
-            throw new Exception("Fail");
-        } else {
-            System.out.println(bit2.or(bit4) + "\nPass");
-        }
-    }
-
-    public static void bitTestXor(Bit bit, Bit bit2, Bit bit3, Bit bit4) throws Exception {
-        // Run xor
-        System.out.println("Test operator Xor:");
-
-        System.out.print("True xor false: ");
-        if ((bit.xor(bit2)).getValue() != true) {
-            throw new Exception("Fail");
-        } else {
-            System.out.println(bit.xor(bit2) + "\nPass");
-        }
-
-        System.out.print("True xor True: ");
-        if ((bit.xor(bit3)).getValue() != false) {
-            throw new Exception("Fail");
-        } else {
-            System.out.println(bit.xor(bit3) + "\nPass");
-        }
-
-        System.out.print("False xor True: ");
-        if ((bit4.xor(bit)).getValue() != true) {
-            throw new Exception("Fail");
-        } else {
-            System.out.println(bit4.xor(bit) + "\nPass");
-        }
-
-        System.out.print("False xor False: ");
-        if ((bit2.xor(bit4)).getValue() != false) {
-            throw new Exception("Fail");
-        } else {
-            System.out.println(bit2.xor(bit4) + "\nPass" + "\n");
-        }
-    }
-
-    public static void bitTestNot(Bit bit, Bit bit2, Bit bit3, Bit bit4) throws Exception {
-        // Run not
-        System.out.println("Test operator Not:");
-
-        System.out.print("not True: ");
-        if ((bit.not()).getValue() != false) {
-            throw new Exception("Fail");
-        } else {
-            System.out.println(bit.not() + "\nPass");
-        }
-
-        System.out.print("not false: ");
-        if ((bit2.not()).getValue() != true) {
-            throw new Exception("Fail");
-        } else {
-            System.out.println(bit2.not() + "\nPass");
-        }
-
-        System.out.print("not true: ");
-        if ((bit3.not()).getValue() != false) {
-            throw new Exception("Fail");
-        } else {
-            System.out.println(bit3.not() + "\nPass");
-        }
-
-        System.out.print("not false: ");
-        if ((bit4.not()).getValue() != true) {
-            throw new Exception("Fail");
-        } else {
-            System.out.println(bit4.not() + "\nPass");
-        }
     }
 }
