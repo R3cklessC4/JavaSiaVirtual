@@ -11,3 +11,9 @@ Assignments for my ICSI404 - Computer Assembly class
 - Supports comparison operations like and, or, xor, not, rightshift, leftshift
 - Capable of conversion to unsigned or signed integer
 - Provides copy and set methods for convenience
+
+## RippleAdder
+- Implements addition and subtraction operations for longwords
+- Takes two longwords as input and returns the sum or difference as per user request
+
+# WITH EACH ASSIGNMENT PUSHED, IMPROVEMENTS WERE MADE TO THE OLDER FILES
